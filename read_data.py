@@ -93,6 +93,13 @@ no_violation = len(women[women['Total Percentage'] == 100])
 
 print("Countries that violate at least one women's right:")
 print('Total countries:', len(women))
-print("Countries tht don't violate any women's right:", no_violation)
+print("Countries that don't violate any women's right:", no_violation)
 print("Percentage of countries that don't violate any women's right: {}%".format(round((no_violation/(len(women)) * 100), 2)))
+print('-------' * 8)
+
+# correlation w/ HFI
+# Sub-Saharan Africa, South Asia, LatAm, MENA
+# Entrepreneurship + Mobility
+# Overall change in score vs selected regions
+#
 
