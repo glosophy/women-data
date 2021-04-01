@@ -74,6 +74,9 @@ for column in cols_indicators:
 women["Total"] = women[cols_indicators].sum(axis=1)
 women_time["Total"] = women_time[cols_indicators].sum(axis=1)
 
+# save file for datviz
+women.to_csv('WomenTotal.csv')
+
 # get avg by region
 region_df = women.groupby(['Region']).Total.mean().reset_index()
 
