@@ -92,3 +92,10 @@ Countries are also classfied according to four different income groups (`High in
 It all started with a bar chart. It ended with a Sankey plot.
 
 Once my data was already cleaned and ready to plot, I worked on Adobe Illustrator to design the main visualization as well as the secondary viz.
+
+## :two_hearts: Thank you!
+JH, SSS, and IV for their feedback while preparing the viz.
+
+Viz inspo: Diana Estefania Rubio.
+
+Color palette: :ocean: :sunny: Curaçao sunset
