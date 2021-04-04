@@ -89,7 +89,7 @@ Countries are also classfied according to four different income groups (`High in
 
 
 ## :bar_chart: Data Visualization
-It all started with a bar chart. It ended with a Sankey plot. I borrowed the color palette from the most beautiful (so far) sunset in Curaçao. :ocean: :sunny:
+It all started with a bar chart. It ended with a Sankey plot. I borrowed the color palette from a beautiful sunset in Curaçao. :ocean: :sunny:
 
 Once my data was already cleaned and ready to plot, I worked on Adobe Illustrator to design the main visualization as well as the secondary viz.
 
