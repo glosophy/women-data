@@ -6,6 +6,7 @@ This repo includes:
 * `WomenTotal.csv`: clean data with selected indicators
 * `read_data.py`: script for data analysis
 * `FinalPoster.png`, `SecondaryCharts.png`: final dataviz with some other secondary charts ready for publication
+* `SocialMedia-02.png`: promo image for sharing on social media
 
 ## :memo: Project Description
 This project aims at understanding the state of women's rights around the world. The data comes from the [*Women, Business
@@ -89,9 +90,11 @@ Countries are also classfied according to four different income groups (`High in
 
 
 ## :bar_chart: Data Visualization
-It all started with a bar chart. It ended with a Sankey plot. I borrowed the color palette from a beautiful sunset in Curaçao. :ocean: :sunny:
+It all started with a bar chart. It ended with a Sankey plot. 
 
 Once my data was already cleaned and ready to plot, I worked on Adobe Illustrator to design the main visualization as well as the secondary viz.
+
+I borrowed the color palette from a beautiful sunset in Curaçao. :ocean: :sunny:
 
 ## :two_hearts: Thank you!
 JH, SSS, and IV for their feedback while preparing the viz.
