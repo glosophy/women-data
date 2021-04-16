@@ -279,13 +279,20 @@ for i in range(len(regions)):
 hio = women_time.loc[(women_time['reportyr'] == 1971) & (women_time['Region'] == 'High income: OECD')]['Total']
 hio2021 = women_time.loc[(women_time['reportyr'] == 2021) & (women_time['Region'] == 'High income: OECD')]['Total']
 
-sns.distplot(hio2021, hist=False, kde=True, kde_kws={'linewidth': 3}, label='2021')
-sns.distplot(hio, hist=False, kde=True, kde_kws={'linewidth': 3}, label='1971')
+hio = hio.tolist()
+hio2021 = hio2021.tolist()
+
+sns.distplot(hio2021, hist=True, kde=True, kde_kws={'linewidth': 1}, label='2021')
+# sns.distplot(hio, hist=False, kde=True, kde_kws={'linewidth': 3}, label='1971')
 plt.legend(title='Year')
 plt.title('Density Plot | Women Freedoms Distribution High Income')
 plt.xlabel("Women's Freedoms")
 plt.ylabel('Density')
 plt.show()
 
+print(len(hio))
+print(len(hio2021))
+
 print(hio)
+print(hio2021)
 
