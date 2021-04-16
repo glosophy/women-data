@@ -250,18 +250,6 @@ print(pairs[:11])
 print('-------' * 8)
 
 # sns distplot (density)
-ssa_dist2021 = women_time.loc[(women_time['reportyr'] == 2021) & (women_time['Region'] == 'Sub-Saharan Africa')]['Total']
-ssa_dist1971 = women_time.loc[(women_time['reportyr'] == 1971) & (women_time['Region'] == 'Sub-Saharan Africa')]['Total']
-sns.distplot(ssa_dist2021, hist=False, kde=True, kde_kws={'linewidth': 3}, label='2021')
-sns.distplot(ssa_dist1971, hist=False, kde=True, kde_kws={'linewidth': 3}, label='1971')
-plt.legend(title='Year')
-plt.title('Density Plot | Women Freedoms Distribution Sub-Saharan Africa')
-plt.xlabel("Women's Freedoms")
-plt.ylabel('Density')
-plt.show()
-
-
-# sns distplot (density)
 dist2021 = women_time[women_time['reportyr'] == 2021]['Total']
 dist1971 = women_time[women_time['reportyr'] == 1971]['Total']
 sns.distplot(dist2021, hist=False, kde=True, kde_kws={'linewidth': 3}, label='2021')
@@ -272,4 +260,32 @@ plt.xlabel("Women's Freedoms")
 plt.ylabel('Density')
 plt.show()
 
-# women's rights
+# women's rights across regions
+region = women_time['Region'].unique()
+
+for i in range(len(regions)):
+    ssa_dist2021 = women_time.loc[(women_time['reportyr'] == 2021) & (women_time['Region'] == region[i])][
+        'Total']
+    ssa_dist1971 = women_time.loc[(women_time['reportyr'] == 1971) & (women_time['Region'] == region[i])][
+        'Total']
+    sns.distplot(ssa_dist2021, hist=False, kde=True, kde_kws={'linewidth': 3}, label='2021')
+    sns.distplot(ssa_dist1971, hist=False, kde=True, kde_kws={'linewidth': 3}, label='1971')
+    plt.legend(title='Year')
+    plt.title('Density Plot | Women Freedoms Distribution {}'.format(region[i]))
+    plt.xlabel("Women's Freedoms")
+    plt.ylabel('Density')
+    plt.show()
+
+hio = women_time.loc[(women_time['reportyr'] == 1971) & (women_time['Region'] == 'High income: OECD')]['Total']
+hio2021 = women_time.loc[(women_time['reportyr'] == 2021) & (women_time['Region'] == 'High income: OECD')]['Total']
+
+sns.distplot(hio2021, hist=False, kde=True, kde_kws={'linewidth': 3}, label='2021')
+sns.distplot(hio, hist=False, kde=True, kde_kws={'linewidth': 3}, label='1971')
+plt.legend(title='Year')
+plt.title('Density Plot | Women Freedoms Distribution High Income')
+plt.xlabel("Women's Freedoms")
+plt.ylabel('Density')
+plt.show()
+
+print(hio)
+
