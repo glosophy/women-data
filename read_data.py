@@ -138,6 +138,12 @@ entrepreneur = ['economy', 'Region', 'Income group', 'reportyr',
                 'Can a woman register a business in the same way as a man?',
                 'Can a woman open a bank account in the same way as a man?']
 
+assets = ['economy', 'Region', 'Income group', 'reportyr',
+          'Do men and women have equal ownership rights to immovable property?',
+          'Do sons and daughters have equal rights to inherit assets from their parents?',
+          'Do male and female surviving spouses have equal rights to inherit assets?',
+          'Does the law grant spouses equal administrative authority over assets during marriage?']
+
 # mobility
 mob = women_time[mobility]
 mob["total_mobility"] = mob[['Can a woman apply for a passport in the same way as a man?',
@@ -192,6 +198,32 @@ plt.xlabel('Year')
 plt.ylabel('Score')
 plt.show()
 
+# assets
+assets_women = women_time[assets]
+assets_women["total_assets"] = assets_women[['Do men and women have equal ownership rights to immovable '
+                                             'property?',
+                                             'Do sons and daughters have equal rights to inherit assets '
+                                             'from their parents?',
+                                             'Do male and female surviving spouses have equal rights to '
+                                             'inherit assets?',
+                                             'Does the law grant spouses equal administrative authority '
+                                             'over assets during marriage?']].sum(
+    axis=1)
+
+placeholder3 = assets_women.groupby(['reportyr'])['total_assets'].mean()  # for overall score
+women_ass = assets_women.groupby(['reportyr', 'Region'])['total_assets'].mean().reset_index()
+women_ass_pivot = women_ass.pivot(index='reportyr', columns='Region', values='total_assets')
+
+for j in women_ass['Region'].unique():
+    a = np.array(women_ass_pivot[j])
+    plt.plot(range(1971, 2022), a, label=j)
+placeholder3.plot(label='Overall Women')
+plt.legend(title="Women's Assets Score", bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.title("Women's Assets by Region")
+plt.xlabel('Year')
+plt.ylabel('Score')
+plt.show()
+
 # regions with biggest increase/decrease
 ent1971, ent2021 = np.array(women_ent[women_ent['reportyr'] == 1971]['total_entrepreneurship']), \
                    np.array(women_ent[women_ent['reportyr'] == 2021]['total_entrepreneurship'])
@@ -225,7 +257,7 @@ total1971 = women_time[women_time['reportyr'] == 1971][['Total', 'economy']]
 total2021 = women_time[women_time['reportyr'] == 2021][['Total', 'economy']]
 
 diff_total_countries = ((np.array(total2021['Total']) /
-                        np.array(total1971['Total'])) - 1) * 100
+                         np.array(total1971['Total'])) - 1) * 100
 
 country_list = [i for i in women_time['economy'].unique()]
 
@@ -295,4 +327,3 @@ print(len(hio2021))
 
 print(hio)
 print(hio2021)
-
