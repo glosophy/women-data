@@ -314,7 +314,7 @@ hio2021 = women_time.loc[(women_time['reportyr'] == 2021) & (women_time['Region'
 hio = hio.tolist()
 hio2021 = hio2021.tolist()
 
-sns.distplot(hio2021, hist=True, kde=True, kde_kws={'linewidth': 1}, label='2021')
+sns.distplot(hio2021, hist=False, kde=True, kde_kws={'linewidth': 1}, label='2021')
 # sns.distplot(hio, hist=False, kde=True, kde_kws={'linewidth': 3}, label='1971')
 plt.legend(title='Year')
 plt.title('Density Plot | Women Freedoms Distribution High Income')
@@ -322,8 +322,40 @@ plt.xlabel("Women's Freedoms")
 plt.ylabel('Density')
 plt.show()
 
-print(len(hio))
-print(len(hio2021))
+# percentage of countries discriminating against women in MOBILITY in MENA
+mobility_discriminate = mob[(mob['total_mobility'] < 4) & (mob['reportyr'] == 2021) &
+                            (mob['Region'] == 'Middle East & North Africa')]['economy']
 
-print(hio)
-print(hio2021)
+countries_MENA_2021 = women[women['Region'] == 'Middle East & North Africa']['economy']
+
+pct_mob_MENA = (len(mobility_discriminate) / len(countries_MENA_2021)) * 100
+
+print('MENA countries that discriminate in mobility:', len(mobility_discriminate))
+print('Total MENA countries:', len(countries_MENA_2021))
+print('Percentage of MENA countries that discriminate in mobility: {}%'.format(round(pct_mob_MENA, 0)))
+print('-------' * 8)
+
+# percentage of countries discriminating against women in ENTREPRENEURSHIP in Sub-Saharan Africa
+ent_discriminate = ent[(ent['total_entrepreneurship'] < 3) & (ent['reportyr'] == 2021) &
+                       (ent['Region'] == 'Sub-Saharan Africa')]['economy']
+
+countries_SSA_2021 = women[women['Region'] == 'Sub-Saharan Africa']['economy']
+
+pct_ent_SSA = (len(ent_discriminate) / len(countries_SSA_2021)) * 100
+
+print('SSA countries that discriminate in entrepreneurship:', len(ent_discriminate))
+print('Total SSA countries:', len(countries_SSA_2021))
+print('Percentage of SSA countries that discriminate in entrepreneurship: {}%'.format(round(pct_ent_SSA, 0)))
+print('-------' * 8)
+
+# percentage of countries discriminating against women in ASSETS in MENA
+assets_discriminate = assets_women[(assets_women['total_assets'] < 4) & (assets_women['reportyr'] == 2021) &
+                            (assets_women['Region'] == 'Middle East & North Africa')]['economy']
+
+pct_assets_MENA = (len(assets_discriminate) / len(countries_MENA_2021)) * 100
+
+print('MENA countries that discriminate in assets:', len(assets_discriminate))
+print('Total MENA countries:', len(countries_MENA_2021))
+print('Percentage of MENA countries that discriminate in assets: {}%'.format(round(pct_assets_MENA, 0)))
+print('-------' * 8)
+
