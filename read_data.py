@@ -359,3 +359,16 @@ print('Total MENA countries:', len(countries_MENA_2021))
 print('Percentage of MENA countries that discriminate in assets: {}%'.format(round(pct_assets_MENA, 0)))
 print('-------' * 8)
 
+# Venezuela vs Panama Scores
+ven = women_time[women_time['economy'] == 'Venezuela, RB'][['economy', 'reportyr', 'Total']]
+pan = women_time[women_time['economy'] == 'Panama'][['economy', 'reportyr', 'Total']]
+peru = women_time[women_time['economy'] == 'Peru'][['economy', 'reportyr', 'Total']]
+
+print('Venezuela Score:')
+print(ven)
+print('-------' * 8)
+print('Panama Score:')
+print(pan)
+print('-------' * 8)
+print('Peru Score:')
+print(peru)
