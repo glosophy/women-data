@@ -7,6 +7,9 @@ This repo includes:
 * `read_data.py`: script for data analysis
 * `FinalPoster.png`, `SecondaryCharts.png`: final dataviz with some other secondary charts ready for publication
 * `SocialMedia-02.png`: promo image for sharing on social media
+* `FinalPoster3May-01.png`: final data viz (big poster)
+* `FinalPosterRegions-04.png`: break-down of gender inequality by region, 1971 vs. 2021
+* `FinalPosterWorld-04.png`: gender inequality worldwide
 
 ## :memo: Project Description
 This project aims at understanding the state of women's rights around the world. The data comes from the [*Women, Business
