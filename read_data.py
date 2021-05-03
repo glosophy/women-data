@@ -372,3 +372,15 @@ print(pan)
 print('-------' * 8)
 print('Peru Score:')
 print(peru)
+print('-------' * 8)
+
+
+# assets
+total_assets_discriminate = assets_women[(assets_women['total_assets'] < 4) & (assets_women['reportyr'] == 2021)]['economy']
+
+pct_assets = (len(total_assets_discriminate) / len(women['economy'])) * 100
+
+print('Countries that discriminate in assets:', len(total_assets_discriminate))
+print('Total countries:', len(women['economy']))
+print('Percentage of countries that discriminate in assets: {}%'.format(round(pct_assets, 0)))
+print('-------' * 8)
