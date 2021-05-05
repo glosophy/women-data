@@ -11,6 +11,11 @@ This repo includes:
 * `FinalPosterRegions-04.png`: break-down of gender inequality by region, 1971 vs. 2021
 * `FinalPosterWorld-04.png`: gender inequality worldwide
 
+## :newspaper: Publication
+A blogpost featuring the data and visualization can be found [here](https://www.cato.org/blog/womens-rights-are-improving-worldwide).
+
+You can also take a look at the final viz on [Behance](https://www.behance.net/gallery/118796019/Womens-Rights-Around-the-World).
+
 ## :memo: Project Description
 This project aims at understanding the state of women's rights around the world. The data comes from the [*Women, Business
 and the Law 2021 Report*](https://openknowledge.worldbank.org/bitstream/handle/10986/35094/9781464816529.pdf) produced by the [World Bank (WB)](https://wbl.worldbank.org/en/wbl).
